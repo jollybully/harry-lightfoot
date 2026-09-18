@@ -1,0 +1,183 @@
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/schibsted-grotesk-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/schibsted-grotesk-medium.woff2") format("woff2");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light dark;
+  --bg: #fff;
+  --text: #111;
+  --muted: #5f5f5f;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Schibsted Grotesk", system-ui, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111;
+    --text: #eee;
+    --muted: #999;
+  }
+}
+
+main {
+  max-width: 34em;
+  margin: 0 auto;
+  padding: clamp(2rem, 8vw, 5rem) clamp(1.25rem, 5vw, 2rem);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.location {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.intro {
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+.intro p {
+  margin: 0;
+}
+
+.work {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.work article + article,
+.training {
+  margin-top: clamp(2rem, 5vw, 2.75rem);
+}
+
+.role-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.org {
+  font-weight: 500;
+}
+
+.dates {
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.role {
+  margin: 0.25rem 0 0;
+  font-size: 0.9375rem;
+}
+
+.work p:not(.role),
+.training p:not(.role) {
+  margin: 0.75rem 0 0;
+}
+
+footer {
+  margin-top: clamp(3rem, 8vw, 5rem);
+}
+
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  animation: reveal-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+header.reveal {
+  animation-delay: 0ms;
+}
+
+.intro.reveal {
+  animation-delay: 100ms;
+}
+
+.work article.reveal:nth-child(1) {
+  animation-delay: 200ms;
+}
+
+.work article.reveal:nth-child(2) {
+  animation-delay: 320ms;
+}
+
+.training.reveal {
+  animation-delay: 440ms;
+}
+
+footer.reveal {
+  animation-delay: 560ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}
