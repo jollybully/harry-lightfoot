@@ -9,13 +9,14 @@ All copy lives in `index.html`. Open it, change the text, save.
 - Add a role: copy an `<article>` block in the work section.
 - Add a photo: drop an image in `assets/` and uncomment the figure block near the footer.
 
-## Deploy (Cloudflare Pages)
+## Deploy (Cloudflare)
 
-1. Push this folder to a GitHub repo.
-2. In Cloudflare Pages: connect the repo, build command **none**, output directory `/`.
-3. Every push to `main` deploys automatically.
+Connect the GitHub repo in Workers & Pages. Leave the defaults:
 
-Or drag the folder into the Cloudflare Pages dashboard for a one-off upload.
+- Build command: none
+- Deploy command: `npx wrangler deploy`
+
+`wrangler.toml` tells Wrangler this is a static site (no Worker script). Every push to `main` deploys automatically.
 
 ## Custom domain
 

@@ -1,0 +1,6 @@
+name = "harry-lightfoot"
+compatibility_date = "2026-09-18"
+
+[assets]
+directory = "."
+html_handling = "auto-trailing-slash"
