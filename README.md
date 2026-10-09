@@ -4,10 +4,10 @@ Single-page static site. No build step.
 
 ## Edit
 
-All copy lives in `index.html`. Open it, change the text, save.
+Copy lives in `index.html`. Open it, change the text, save.
 
-- Add a role: copy an `<article>` block in the work section.
-- Add a photo: drop an image in `assets/` and uncomment the figure block near the footer.
+- Add a credit: copy an `<article>` in the work section. Set `data-youtube` and the YouTube URLs / thumbnail id to the video id (the `v=` value).
+- Thumbnails load as stills. The embed is created on click, so the page does not load ten YouTube players at once.
 
 ## Deploy (Cloudflare)
 
