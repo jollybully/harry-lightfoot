@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <title>Harry Lightfoot</title>
-  <meta name="description" content="Harry Lightfoot — videographer and live production lead based in London. Live music events, multi-camera productions and audio recordings.">
+  <meta name="description" content="Harry Lightfoot — videographer and live production lead. Live music events, multi-camera productions and audio recordings.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,12 +16,8 @@
     <div class="masthead">
       <header class="reveal">
         <h1>Harry Lightfoot</h1>
-        <p class="location">London</p>
+        <p class="role">Videographer and Live Production lead</p>
       </header>
-
-      <section class="intro reveal">
-        <p>Videographer and live production lead, with experience delivering live music events, multi-camera productions and audio recordings.</p>
-      </section>
     </div>
 
     <!-- add a credit: copy an <article> and set data-youtube to the video id -->
@@ -146,7 +145,7 @@
 
     <footer class="reveal">
       <a href="https://www.linkedin.com/in/harry-lightfoot-45a6a260/" rel="noopener noreferrer">LinkedIn</a>
-      <a data-mail>Email</a>
+      <a href="#email" data-mail>Email</a>
     </footer>
   </main>
 
@@ -154,7 +153,10 @@
     (function () {
       var mail = document.querySelector("[data-mail]");
       if (mail) {
-        mail.href = "mailto:" + ["Lightfooyharry", "gmail.com"].join("@");
+        mail.addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.href = "mailto:" + ["Lightfooyharry", "gmail.com"].join("@");
+        });
       }
 
       var work = document.querySelector(".work");
