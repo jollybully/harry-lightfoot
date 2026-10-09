@@ -44,7 +44,7 @@
           </a>
         </div>
         <h2>Fred Again</h2>
-        <p>Producer / Director, Boiler Room set</p>
+        <p>Video producer, Boiler Room set</p>
       </article>
 
       <article>
@@ -56,7 +56,7 @@
           </a>
         </div>
         <h2>Yung Lean &amp; Bladee</h2>
-        <p>Producer / Director, London headline show</p>
+        <p>Video producer, London headline show</p>
       </article>
 
       <article>
@@ -80,7 +80,7 @@
           </a>
         </div>
         <h2>The Streets</h2>
-        <p>Producer / Director, live at Amnesia</p>
+        <p>Video producer, live at Amnesia</p>
       </article>
 
       <article>
@@ -146,11 +146,17 @@
 
     <footer class="reveal">
       <a href="https://www.linkedin.com/in/harry-lightfoot-45a6a260/" rel="noopener noreferrer">LinkedIn</a>
+      <a data-mail>Email</a>
     </footer>
   </main>
 
   <script>
     (function () {
+      var mail = document.querySelector("[data-mail]");
+      if (mail) {
+        mail.href = "mailto:" + ["Lightfooyharry", "gmail.com"].join("@");
+      }
+
       var work = document.querySelector(".work");
       if (!work) return;
 
